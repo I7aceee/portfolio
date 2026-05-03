@@ -15,11 +15,6 @@ const contactLinks = [
     href: "https://t.me/i7ace",
     display: "@i7ace",
   },
-  {
-    label: "GitHub",
-    href: "https://github.com/i7ace",
-    display: "github.com/i7ace",
-  },
 ];
 
 export function Contact() {
