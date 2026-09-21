@@ -4,6 +4,7 @@ import { About } from "@/widgets/about/ui/About";
 import { CasesPreview } from "@/widgets/cases-preview/ui/CasesPreview";
 import { Stack } from "@/widgets/stack/ui/Stack";
 import { Contact } from "@/widgets/contact/ui/Contact";
+import {TestForm} from "@/widgets/form/ui";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <CasesPreview />
         <Stack />
         <Contact />
+        <TestForm />
       </main>
       <footer className="border-t border-white/[0.04] px-6 py-8">
         <div className="mx-auto flex max-w-5xl items-center justify-between">
