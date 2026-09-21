@@ -9,7 +9,8 @@ export const TestForm = () => {
 
   const onSubmit = async () => {
     try {
-      await new Promise((resolve) => setTimeout(() => resolve, 500))
+      console.log(1)
+      await new Promise((resolve) => setTimeout(resolve, 500))
       pushEvent('form_submit', { form_name: 'callback' });
     } catch (err) {
       pushEvent('form_error', { form_name: 'callback', error_type: 'request_failed' });
