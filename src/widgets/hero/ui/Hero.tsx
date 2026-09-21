@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { fadeInUp, stagger } from "@/shared/lib/motion";
+import {pushEvent} from "@/shared/lib/push-event";
 
 export function Hero() {
   return (
@@ -55,6 +56,7 @@ export function Hero() {
               <a
                 href="#contact"
                 className="text-sm text-neutral-500 transition-colors duration-200 hover:text-neutral-300"
+                onClick={() => pushEvent("cta_click", {button_name: "contact", button_location: "hero"})}
               >
                 Связаться
               </a>
@@ -68,7 +70,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="hidden md:block"
           >
-            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-white/[0.06] bg-[#111]">
+            <div className="relative aspect-3/4 w-full overflow-hidden rounded-2xl border border-white/6 bg-[#111]">
               <Image
                 src="/photo.jpg"
                 alt="Максим"
@@ -78,7 +80,7 @@ export function Hero() {
                 priority
               />
               {/* Subtle gradient overlay at bottom */}
-              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#080808]/70 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-[#080808]/70 to-transparent" />
             </div>
           </motion.div>
 
@@ -92,7 +94,7 @@ export function Hero() {
         transition={{ delay: 1, duration: 0.6 }}
         className="absolute bottom-10 left-6 right-6"
       >
-        <div className="mx-auto max-w-5xl h-px w-full bg-white/[0.05]" />
+        <div className="mx-auto max-w-5xl h-px w-full bg-white/5" />
       </motion.div>
     </section>
   );
