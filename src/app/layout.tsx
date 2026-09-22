@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import {GoogleTagManager} from "@next/third-parties/google";
+import {usePageView} from "@/shared/lib/use-page-view";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -35,9 +36,15 @@ export default function RootLayout({
   return (
     <html lang="ru" className={`${inter.variable} bg-[#080808]`}>
     <GoogleTagManager gtmId={"GTM-M7RGTZSR"} />
+    <AnalyticsListener />
       <body className="min-h-screen bg-[#080808] text-[#f0f0f0] font-sans">
         {children}
       </body>
     </html>
   );
+}
+
+const AnalyticsListener = () => {
+  usePageView()
+  return <></>
 }
