@@ -1,4 +1,4 @@
-export const pushEvent = (event: string, params: Record<string, unknown> = {}) => {
+export const pushEvent = (event: string, params: Record<string, unknown> | null = {}) => {
   if (typeof window === "undefined") return;
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({event, ...params})
