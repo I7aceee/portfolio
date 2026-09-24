@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import {GoogleTagManager} from "@next/third-parties/google";
-import {usePageView} from "@/shared/lib/use-page-view";
+import { AnalyticsListener } from "./analytic";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -42,9 +42,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
-
-const AnalyticsListener = () => {
-  usePageView()
-  return <></>
 }
